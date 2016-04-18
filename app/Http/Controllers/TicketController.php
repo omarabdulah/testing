@@ -113,7 +113,11 @@ class TicketController extends Controller
 
     public function ticketsReports(){
         $tickets = Ticket::orderBy('id','desc')->get();
-        return view('reports.ticket_reports',compact('tickets'));
+        $confirm = Ticket::where('status','Confirm')->count();
+        $pending = Ticket::where('status','')->count();
+        $cancel = Ticket::where('status','Cancel')->count();
+        $fake = Ticket::where('status','Fake')->count();
+        return view('reports.ticket_reports',compact('tickets','confirm','pending','cancel','fake'));
     }
 
 

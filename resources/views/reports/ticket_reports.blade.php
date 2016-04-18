@@ -4,12 +4,70 @@
     <section class="content-header">
         <h1>
             Ticket
-            <small>View</small>
+            <small> Reports</small>
         </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
+        <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>{{$pending}}</h3>
+
+                    <p>Pending Tickets</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-fw fa-ticket"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{$confirm}}</h3>
+
+                    <p>Confirm Tickets</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-fw fa-ticket"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>{{$cancel}}</h3>
+
+                    <p>Cancel Tickets</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-fw fa-ticket"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>{{$fake}}</h3>
+
+                    <p>Fake Tickets</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        </div>
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Tickets</h3>
