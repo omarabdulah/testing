@@ -3,8 +3,8 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Ticket
-            <small>Create New Ticket</small>
+            Agent
+            <small>Create New Agent</small>
         </h1>
     </section>
 

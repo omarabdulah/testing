@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Ticket;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $tickets = Ticket::count();
+        $out_agents = User::where('type','outbound')->count();
+        $in_agents = User::where('type','inbound')->count();
+        return view('dashboard',compact('out_agents','in_agents','tickets'));
     }
 }

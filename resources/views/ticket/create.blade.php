@@ -48,7 +48,12 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label>Car</label>
-                            <input required class="form-control"  placeholder="Enter Car" name="car">
+                            <select class="form-control" name="car" required="">
+                                <option selected disabled>Select Car</option>
+                                <option value="APV">APV</option>
+                                <option value="Swift">Swift</option>
+                                <option value="City">City</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Booking Time</label>

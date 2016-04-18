@@ -35,8 +35,8 @@
                     <i class="fa fa-dashboard"></i> <span>Ticket</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('ticket.index')}}"><i class="fa fa-circle-o"></i> View</a></li>
-                    <li><a href="{{route('ticket.create')}}"><i class="fa fa-circle-o"></i> Create</a></li>
+                    <li><a href="{{route('ticket.index')}}"><i class="fa fa-circle-o"></i> View Tickets</a></li>
+                    <li><a href="{{route('ticket.create')}}"><i class="fa fa-circle-o"></i> Create Ticket</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -44,8 +44,16 @@
                     <i class="fa fa-dashboard"></i> <span>Agents</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('agent.index')}}"><i class="fa fa-circle-o"></i>View</a></li>
-                    <li><a href="{{route('agent.create')}}"><i class="fa fa-circle-o"></i> Create</a></li>
+                    <li><a href="{{route('agent.index')}}"><i class="fa fa-circle-o"></i>View Agents</a></li>
+                    <li><a href="{{route('agent.create')}}"><i class="fa fa-circle-o"></i> Create Agent</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Reports</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('ticket.reports')}}"><i class="fa fa-circle-o"></i>View Ticket Reports</a></li>
                 </ul>
             </li>
         </ul>

@@ -28,7 +28,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        $users = User::get();
+        $users = User::whereIn('type',['outbound'])->get();
         return view('ticket.create',compact('users'));
     }
 
@@ -102,4 +102,44 @@ class TicketController extends Controller
     {
         //
     }
+
+    public function updateStatus(Request $request){
+        $ticket = Ticket::find($request->id);
+        $ticket->status = $request->status;
+        $ticket->save();
+
+        return redirect()->back();
+    }
+
+    public function ticketsReports(){
+        $tickets = Ticket::orderBy('id','desc')->get();
+        return view('reports.ticket_reports',compact('tickets'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

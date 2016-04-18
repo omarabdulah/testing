@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index');
 
 Route::resource('/ticket','TicketController');
 Route::resource('/agent','UserController');
-Route::get('test',function(){
-    return view('auth.register2');
-});
+
+Route::post('/ticket/updateStatus','TicketController@updateStatus');
+
+Route::get('/tickets/reports',['as'=>'ticket.reports','uses'=>'TicketController@ticketsReports']);

@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Ticket
+            Agents
             <small>View</small>
         </h1>
     </section>
@@ -12,7 +12,7 @@
     <section class="content">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Tickets</h3>
+                <h3 class="box-title">Agents</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
