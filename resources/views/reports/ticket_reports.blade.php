@@ -62,7 +62,7 @@
                     <p>Fake Tickets</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
+                    <i class="fa fa-fw fa-ticket"></i>
                 </div>
             </div>
         </div>
@@ -82,11 +82,13 @@
                                 <tr role="row">
                                     <th>Ticket No.</th>
                                     <th>Last Name</th>
+                                    <th>Contact</th>
                                     <th>Status</th>
                                     <th>Car</th>
                                     <th>From</th>
                                     <th>Where</th>
                                     <th>Time</th>
+                                    <th>OB Agent</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -94,6 +96,7 @@
                                     <tr role="row">
                                         <td>{{$ticket->id}}</td>
                                         <td>{{$ticket->last_name}}</td>
+                                        <td>{{$ticket->phone}}</td>
                                         <td>@if($ticket->status == '')
                                                 <label class="label label-warning">Pending </label>
                                             @elseif($ticket->status == 'Confirm')
@@ -107,6 +110,7 @@
                                         <td>{{$ticket->from}}</td>
                                         <td>{{$ticket->where}}</td>
                                         <td>{{$ticket->booking_time}}</td>
+                                        <td>{{ucfirst($ticket->agent->name)}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

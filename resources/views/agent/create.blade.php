@@ -12,7 +12,7 @@
     <section class="content">
         <form role="form" method="post" action="{{route('agent.store')}}">
             {{csrf_field()}}
-            <div class="col-xs-6">
+            <div class="col-md-6">
                 <div class="box box-primary">
             <!-- form start -->
                 <div class="box-body">

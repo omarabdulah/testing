@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index');
 
-Route::resource('/ticket','TicketController');
-Route::resource('/agent','UserController');
+    Route::resource('/ticket','TicketController');
+    Route::resource('/agent','UserController');
 
-Route::post('/ticket/updateStatus','TicketController@updateStatus');
+    Route::post('/ticket/updateStatus','TicketController@updateStatus');
 
-Route::get('/tickets/reports',['as'=>'ticket.reports','uses'=>'TicketController@ticketsReports']);
+    Route::get('/tickets/reports',['as'=>'ticket.reports','uses'=>'TicketController@ticketsReports']);
+
+});

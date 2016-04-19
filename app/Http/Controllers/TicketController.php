@@ -40,21 +40,38 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        $ticket = Ticket::create(
-            [
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'area' => $request->area,
-                'city' => $request->city,
-                'car' => $request->car,
-                'booking_time' => $request->booking_time,
-                'from' => $request->from,
-                'where' => $request->where,
-                'user_id' => $request->user_id,
-            ]
-        );
+//        $ticket = Ticket::create(
+//            [
+//                'first_name' => $request->first_name,
+//                'last_name' => $request->last_name,
+//                'address' => $request->address,
+//                'phone' => $request->phone,
+//                'area' => $request->area,
+//                'city' => $request->city,
+//                'car' => $request->car,
+//                'booking_time' => $request->booking_time,
+//                'from' => $request->from,
+//                'where' => $request->where,
+//                'user_id' => $request->user_id,
+//            ]
+//          );
+        $ticket = new Ticket();
+        $ticket->first_name = $request->first_name;
+        $ticket->last_name = $request->last_name;
+        $ticket->address = $request->address;
+        $ticket->phone = $request->phone;
+        $ticket->area = $request->area;
+        $ticket->city = $request->city;
+        $ticket->car = $request->car;
+        $ticket->booking_time= $request->booking_time;
+        $ticket->from = $request->from;
+        $ticket->where = $request->where;
+
+        $agent = User::find($request->user_id);
+//        $agent->ticket()->save($ticket);
+        $ticket->agent()->associate($agent);
+        $ticket->save();
+
         return redirect()->route('ticket.index');
     }
 

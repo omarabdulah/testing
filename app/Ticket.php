@@ -11,6 +11,6 @@ class Ticket extends Model
     public $timestamps = false;
 
     public function agent(){
-        return $this->belongsTo('App\User','id');
+        return $this->belongsTo('App\User','user_id');
     }
 }

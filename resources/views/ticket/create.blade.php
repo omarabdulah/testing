@@ -12,7 +12,7 @@
     <section class="content">
         <form role="form" method="post" action="{{route('ticket.store')}}">
             {{csrf_field()}}
-            <div class="col-xs-6">
+            <div class="col-md-6 col-sm-12">
                 <div class="box box-primary">
             <!-- form start -->
                 <div class="box-body">
@@ -26,11 +26,11 @@
                     </div>
                     <div class="form-group">
                         <label>Address</label>
-                        <textarea required class="form-control"  placeholder="Enter Contact" name="address"></textarea>
+                        <textarea required class="form-control"  placeholder="Enter Address" name="address"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Contact</label>
-                        <input required class="form-control"  placeholder="Enter Address" name="phone">
+                        <input required class="form-control"  placeholder="Enter Contact Number" name="phone">
                     </div>
                     <div class="form-group">
                         <label>Area</label>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-md-6 col-sm-12">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="form-group">

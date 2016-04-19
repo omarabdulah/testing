@@ -24,11 +24,13 @@
                                 <tr role="row">
                                     <th>Ticket No.</th>
                                     <th>Last Name</th>
+                                    <th>Contact</th>
                                     <th>Status</th>
                                     <th>From</th>
                                     <th>Where</th>
                                     <th>Time</th>
                                     <th>Action</th>
+                                    <th>OB Agent</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,6 +38,7 @@
                                     <tr role="row">
                                         <td>{{$ticket->id}}</td>
                                         <td>{{$ticket->last_name}}</td>
+                                        <td>{{$ticket->phone}}</td>
                                         <td>@if($ticket->status == '') Pending @else {{$ticket->status}}@endif</td>
                                         <td>{{$ticket->from}}</td>
                                         <td>{{$ticket->where}}</td>
@@ -43,15 +46,17 @@
                                         <form method="post" action="{{url('/ticket/updateStatus')}}">
                                             {{csrf_field()}}
                                             <input name="id" value="{{$ticket->id}}" hidden="hidden">
-                                        <td>
-                                            <select class="ticket-status" name="status" onchange="this.form.submit()">
-                                                <option selected disabled>Status</option>
-                                                <option>Confirm</option>
-                                                <option>Cancel</option>
-                                                <option>Fake</option>
-                                            </select>
-                                        </td>
+                                            <td>
+                                                <select class="ticket-status" name="status" onchange="this.form.submit()">
+                                                    <option selected disabled>Status</option>
+                                                    <option>Confirm</option>
+                                                    <option>Cancel</option>
+                                                    <option>Fake</option>
+                                                </select>
+                                            </td>
                                         </form>
+                                        <td>{{ucfirst($ticket->agent->name)}}</td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>
