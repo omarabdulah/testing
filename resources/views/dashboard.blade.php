@@ -50,7 +50,7 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>{$out_agents}}</h3>
+                        <h3>{{$out_agents}}</h3>
 
                         <p>Outbound Agents</p>
                     </div>
